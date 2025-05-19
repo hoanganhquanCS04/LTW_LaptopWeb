@@ -1,0 +1,47 @@
+[build-system]
+requires = ['setuptools>=40.8.0', 'wheel']
+build-backend = 'setuptools.build_meta:__legacy__'
+
+[project]
+name = "django-vnpay"
+version = "0.0.18"
+description = "A quick package for integrating Vnpay payment gateway."
+readme = "README.md"
+authors = [{ name = "Son Lam", email = "son.lg@eoh.io" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "django >= 4.0.0",
+    "djangorestframework >= 3.12.4",
+    "django-ipware >= 4.0.0",
+]
+keywords = ["django", "vnpay"]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = ["bumpver", "poetry", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/laughlamz/django-vnpay"
+
+
+[tool.bumpver]
+current_version = "0.0.18"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'version = "{version}"',
+]
+"README.md" = [
+    "Version {version}",
+]
+
